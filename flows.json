@@ -1,0 +1,198 @@
+[
+    {
+        "id": "52b9526e46f30ee9",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cb4c69da276014bf",
+        "type": "mqtt in",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "topic": "esp32/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b33d8705751ce6a6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "9b69cb0675ddc492",
+                "5c3308a257314f83"
+            ]
+        ]
+    },
+    {
+        "id": "9b69cb0675ddc492",
+        "type": "debug",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7dfcfa69c0527345",
+        "type": "mqtt in",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "topic": "esp32/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b33d8705751ce6a6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "e4afc5a9c41fd7bf"
+            ]
+        ]
+    },
+    {
+        "id": "c859265a33484c1f",
+        "type": "mqtt in",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "topic": "esp32/photoresistor",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b33d8705751ce6a6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 570,
+        "y": 460,
+        "wires": [
+            [
+                "66bae4934929c1fe"
+            ]
+        ]
+    },
+    {
+        "id": "5c3308a257314f83",
+        "type": "ui_gauge",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "group": "380498f.f287668",
+        "order": 0,
+        "width": "6",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e4afc5a9c41fd7bf",
+        "type": "ui_gauge",
+        "z": "52b9526e46f30ee9",
+        "name": "",
+        "group": "380498f.f287668",
+        "order": 0,
+        "width": "6",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 800,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "66bae4934929c1fe",
+        "type": "ui_text",
+        "z": "52b9526e46f30ee9",
+        "group": "380498f.f287668",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Photoresistor Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 910,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b33d8705751ce6a6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "380498f.f287668",
+        "type": "ui_group",
+        "name": "ESP32 Monitoring",
+        "tab": "bc7bc45249acbd0b",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "bc7bc45249acbd0b",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
